@@ -1,0 +1,12 @@
+.idea
+target
+wrapper
+.asscache
+.classpath
+.gitignore.swp
+.project
+grailsw
+grailsw.bat
+learning-management.iml
+learning-management-grailsPlugins.iml
+
