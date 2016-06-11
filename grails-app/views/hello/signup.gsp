@@ -1,12 +1,20 @@
-<H1>Sign-up-form</H1>
-<form method="post" action="/learning-management/form/saveUser">
-    FirstName:<input type=text name="firstName" placeholder="Enter firstname"><br><br>
+<html>
+    <head>
+    </head>
+    <body>
+        <H1>Sign-up-form</H1>
 
-    LastName:<input type=text name="lastName" placeholder="Enter Lastname"><br><br>
+        <form method="post" action="/learning-management/form/saveUser">
+            <label class="">FirstName:</label>
+            <input type=text name="firstName" placeholder="Enter firstname" class="form-control">
 
-    Email-ID:<input type=text name="email" placeholder="Enter Email"><br><br>
+            LastName:<input type=text name="lastName" placeholder="Enter Lastname"><br><br>
 
-    Password:<input type="password" name="pwd" placeholder="Enter Password"><br><brs>
+            Email-ID:<input type=text name="email" placeholder="Enter Email"><br><br>
 
-    <input type="submit" value="submit">
-</form>
+            Password:<input type="password" name="pwd" placeholder="Enter Password"><br><brs>
+
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

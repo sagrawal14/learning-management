@@ -11,15 +11,7 @@ class FormController {
         println params.email
         println params.pwd
 
-        redirect(controller: "form", action: "thankYou", params: [name: "you"])
-    }
-
-    def thankYou() {
-        println "thank you action executed"
-        println params
-
-        render("""
-            Thank you for your signup. You submitted following details:
-            """)
+        return [firstName: params.firstName, lastName: params.lastName, email: params.email, currentDate: new Date(),
+            rating: 23, age: 100]
     }
 }
