@@ -8,11 +8,10 @@
 <body>
     Thank you for sign up. Your details are as follow:
 
-    First Name: ${firstName}<br>
-    Last Name: ${lastName}<br>
-    Email: ${email}<br>
-    Signed up at: ${currentDate}<br>
-    Age: ${age}<br>
-    Rating: ${rating}<br>
+    First Name: ${recentlySavedUser.myFirstName}<br>
+    Last Name: ${recentlySavedUser.myLastName}<br>
+    Email: ${recentlySavedUser.myEmail}<br>
+    Email: ${recentlySavedUser.myAge}<br>
+    Message: ${recentlySavedUser.doSomething()}
 </body>
 </html>

@@ -12,7 +12,7 @@
 
             Email-ID:<input type=text name="email" placeholder="Enter Email"><br><br>
 
-            Password:<input type="password" name="pwd" placeholder="Enter Password"><br><brs>
+            Age:<input type="number" name="age" placeholder="Enter your age"><br><brs>
 
             <input type="submit" value="submit">
         </form>

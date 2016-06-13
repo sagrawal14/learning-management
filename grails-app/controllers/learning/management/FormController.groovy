@@ -4,14 +4,19 @@ class FormController {
 
     def saveUser() {
         println "saveUser action executed"
-
         println("Parameters received")
-        println params.firstName
-        println params.lastName
-        println params.email
-        println params.pwd
+        println params
 
-        return [firstName: params.firstName, lastName: params.lastName, email: params.email, currentDate: new Date(),
-            rating: 23, age: 100]
+        params.age = params.age != null ? params.age : 0
+
+        params.age = Integer.parseInt(params.age)
+        params.age = params.age.toInteger()
+
+        User myUser = new User([myFirstName: params.firstName, myLastName: params.lastName,
+            myEmail: params.email, myAge: params.age])
+
+        myUser.myTask()
+
+        return [recentlySavedUser: myUser]
     }
 }
