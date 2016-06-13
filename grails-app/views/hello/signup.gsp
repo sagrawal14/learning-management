@@ -4,9 +4,14 @@
     <body>
         <H1>Sign-up-form</H1>
 
+        <g:form controller="form" action="saveUser" method="post" name="myForm">
+
+        </g:form>
+
         <form method="post" action="/learning-management/form/saveUser">
-            <label class="">FirstName:</label>
-            <input type=text name="firstName" placeholder="Enter firstname" class="form-control">
+            <label for="firstName" class="">FirstName:</label>
+
+            <input type=text name="firstName" placeholder="Enter firstname" id="firstName" class="form-control">
 
             LastName:<input type=text name="lastName" placeholder="Enter Lastname"><br><br>
 
