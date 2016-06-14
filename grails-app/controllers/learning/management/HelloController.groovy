@@ -3,7 +3,7 @@ package learning.management
 class HelloController {
 
     def index() {
-        render("Hello this is me. Shashank<h1>hello</h1>")
+        [lastSavedUser: session.lastSavedUser, day: session.day, date: 14]
     }
 
     def signup() {
