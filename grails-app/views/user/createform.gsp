@@ -8,23 +8,68 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <asset:stylesheet href="bootstrap.min.css"/>
 </head>
-
 <body>
-    <g:form method="post" controller="user" action="save">
-        <g:textField name="firstname" placeholder="First Name">
-        </g:textField>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                </button>
+                <a class="navbar-brand" href="#">Learning Mangement</a>
+            </div>
 
-        <g:textField name="lastname" placeholder="Last Name">
-        </g:textField>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <g:link controller="user" action="createform">Create</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="user" action="view">Show</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="user" action="list">List</g:link>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 
-        <g:textField name="email" placeholder="Email">
-        </g:textField>
+    <g:form method="post" controller="user" action="save" class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2">First Name</label>
+            <div class="col-sm-6">
+                <g:textField name="firstname" placeholder="First Name" class="form-control"></g:textField>
+            </div>
+        </div>
 
-        <g:textField name="age" placeholder="Ageœ"></g:textField>
+        <div class="form-group">
+            <label class="control-label col-sm-2">First Name</label>
+            <div class="col-sm-6">
+                <g:textField name="lastname" placeholder="Last Name" class="form-control"></g:textField>
+            </div>
+        </div>
 
-        <g:submitButton name="submit"></g:submitButton>
+        <div class="form-group">
+            <label class="control-label col-sm-2">First Name</label>
+            <div class="col-sm-6">
+                <g:textField name="email" placeholder="Email" class="form-control"></g:textField>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">First Name</label>
+            <div class="col-sm-6">
+                <g:textField name="age" placeholder="Age" class="form-control"></g:textField>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-6 col-sm-push-2">
+                <g:submitButton name="submit" class="btn btn-primary"></g:submitButton>
+            </div>
+        </div>
     </g:form>
 </body>
 </html>

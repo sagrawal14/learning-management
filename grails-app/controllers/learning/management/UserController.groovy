@@ -8,7 +8,7 @@ class UserController {
 
     def save() {
         User myUser = new User([myFirstName: params.firstname, myLastName: params.lastname, myEmail: params.email,
-            myAge: params.age])
+            myAge: params.int('age')])
 
         session.lastSavedUser = myUser
         session.allUsers = session.allUsers ?: []

@@ -5,6 +5,6 @@ class User {
     String myFirstName
     String myLastName
     String myEmail
-    String myAge
+    int myAge
 
 }
