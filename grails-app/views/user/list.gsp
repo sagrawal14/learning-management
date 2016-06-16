@@ -1,13 +1,9 @@
 <html>
 <head>
-    <asset:stylesheet href="bootstrap.min.css"/>
-    <asset:javascript src="jquery.min.js"/>
-    <asset:javascript src="bootstrap.min.js"/>
+    <meta name="layout" content="abc" />
+    <asset:stylesheet href="listing-page.css" />
 </head>
 <body>
-    <g:render template="/templates/myNavbar" model="[myCurrentPage: 'listing', day: 25]"></g:render>
-
-    <div class="container">
         <table class="table table-bordered">
             <tr>
                 <th>First name</th>
@@ -22,6 +18,5 @@
                     </tr>
             </g:each>
         </table>
-    </div>
 </body>
 </html>

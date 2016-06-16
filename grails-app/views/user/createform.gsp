@@ -11,8 +11,6 @@
     <asset:stylesheet href="bootstrap.min.css"/>
 </head>
 <body>
-    <g:render template="/templates/myNavbar" model="[myCurrentPage: 'create', day: 26]"></g:render>
-
     <g:form method="post" controller="user" action="save" class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-sm-2">First Name</label>

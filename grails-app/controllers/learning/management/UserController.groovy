@@ -18,7 +18,7 @@ class UserController {
     }
 
     def view() {
-        return [recentuser: session.lastSavedUser]
+        return [recentuser: session.lastSavedUser, myCurrentPage: 'view']
     }
 
     def list(){
