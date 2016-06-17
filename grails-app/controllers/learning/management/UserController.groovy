@@ -23,7 +23,7 @@ class UserController {
         return [recentuser: myPerson]
     }
 
-    def list(){
+    def list() {
         [allCreatedUsers: Person.list()]
     }
 }

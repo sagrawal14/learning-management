@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-sm-10">
             <div class="page-header">
-                <h1>This is my start of createtor.gsp body</h1>
+                <h1>Create User</h1>
             </div>
 
             <g:form method="post" controller="user" action="save" class="form-horizontal">
@@ -52,18 +52,7 @@
                     </div>
                 </div>
             </g:form>
-            <h1>this is my end</h1>
         </div>
     </div>
-
-    <content tag="ironMan">
-        <div class="col-sm-2">
-        Proin magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce neque. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-
-        Phasellus a est. Etiam imperdiet imperdiet orci. Curabitur blandit mollis lacus. Ut non enim eleifend felis pretium feugiat. Praesent egestas tristique nibh.
-
-        Vestibulum ullamcorper mauris at ligula. Fusce neque. Ut varius tincidunt libero. Donec id justo. Fusce pharetra convallis urna.
-            </div>
-    </content>
 </body>
 </html>

@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta name="layout" content="abc" />
-    <asset:stylesheet href="listing-page.css" />
 </head>
 <body>
         <table class="table table-bordered">
@@ -13,7 +12,11 @@
             </tr>
             <g:each var="user" in="${allCreatedUsers}">
                     <tr class="${user.age > 100 ? 'bg-danger': ''}">
-                        <td>${user.id}</td>
+                        <td>
+                            <a href="/user/show/${user.id}">
+                                ${user.id}
+                            </a>
+                        </td>
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <td>(${user.age})</td>

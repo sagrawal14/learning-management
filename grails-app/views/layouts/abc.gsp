@@ -22,10 +22,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="${params.action == 'createform' ? 'active': ''}">
-                        <g:link controller="user" action="createform">Create</g:link>
-                    </li>
-                    <li class="${params.action == 'view' ? 'active': ''}">
-                        <g:link controller="user" action="view">Show</g:link>
+                        <g:link controller="user" action="create">Create</g:link>
                     </li>
                     <li class="${params.action == 'list' ? 'active': ''}">
                         <g:link controller="user" action="list">List</g:link>
@@ -35,16 +32,14 @@
         </div>
     </nav>
 
-    <div class="row">
-        <div class="col-sm-10">
-            <div class="page-header">
-                <h1></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <g:layoutBody />
             </div>
 
-            <g:layoutBody />
+            <g:pageProperty name="page.ironMan" />
         </div>
-
-        <g:pageProperty name="page.ironMan" />
     </div>
 </body>
 </html>
