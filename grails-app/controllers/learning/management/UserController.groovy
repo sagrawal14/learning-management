@@ -3,25 +3,24 @@ package learning.management
 class UserController {
 
     def createform() {
-
     }
 
     def save() {
-        User myUser = new User([myFirstName: params.firstname, myLastName: params.lastname, myEmail: params.email,
-            myAge: params.int('age')])
+        Person myUser = new Person([firstName: params.firstName, lastName: params.lastName, email: params.email,
+            age: params.age])
 
-        session.lastSavedUser = myUser
-        session.allUsers = session.allUsers ?: []
-        session.allUsers.push(myUser)
+        myUser.save()
 
         redirect(action: "view")
     }
 
     def view() {
-        return [recentuser: session.lastSavedUser, myCurrentPage: 'view']
+        Person myPerson = Person.get(params.id)
+
+        return [recentuser: myPerson]
     }
 
     def list(){
-        [allCreatedUsers: session.allUsers]
+        [allCreatedUsers: Person.list()]
     }
 }

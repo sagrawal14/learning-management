@@ -12,12 +12,19 @@
 </head>
 
 <body>
-    <dl class="dl-horizontal">
-        <dt>First Name:</dt> <dd>${recentuser.myFirstName}</dd>
-        <dt>Last Name:</dt> <dd>${recentuser.myLastName}</dd>
-        <dt>Email:</dt> <dd>${recentuser.myEmail}</dd>
-        <dt>Age:</dt> <dd>${recentuser.myAge}</dd>
-    </dl>
+    <g:if test="${recentuser}">
+        <dl class="dl-horizontal">
+            <dt>ID:</dt> <dd>${recentuser.id}</dd>
+            <dt>Version:</dt> <dd>${recentuser.version}</dd>
+            <dt>First Name:</dt> <dd>${recentuser.firstName}</dd>
+            <dt>Last Name:</dt> <dd>${recentuser.lastName}</dd>
+            <dt>Email:</dt> <dd>${recentuser.email}</dd>
+            <dt>Age:</dt> <dd>${recentuser.age}</dd>
+        </dl>
+    </g:if>
+    <g:else>
+        Oops! No user received
+    </g:else>
 
 </body>
 </html>

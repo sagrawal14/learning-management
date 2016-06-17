@@ -35,8 +35,17 @@
         </div>
     </nav>
 
-    <div class="container">
-        <g:layoutBody />
+    <div class="row">
+        <div class="col-sm-10">
+            <div class="page-header">
+                <h1></h1>
+            </div>
+
+            <g:layoutBody />
+        </div>
+
+
+            <g:pageProperty name="page.ironMan" />
     </div>
 
 </body>
