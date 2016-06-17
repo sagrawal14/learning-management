@@ -21,13 +21,13 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class=${g.pageProperty(name: "myCurrentPage") =="create" ? 'active' : ''}>
+                    <li class="${params.action == 'createform' ? 'active': ''}">
                         <g:link controller="user" action="createform">Create</g:link>
                     </li>
-                    <li class=${myCurrentPage=="view" ? 'active' : ''}>
+                    <li class="${params.action == 'view' ? 'active': ''}">
                         <g:link controller="user" action="view">Show</g:link>
                     </li>
-                    <li class=${myCurrentPage=="listing" ? 'active' : ''}>
+                    <li class="${params.action == 'list' ? 'active': ''}">
                         <g:link controller="user" action="list">List</g:link>
                     </li>
                 </ul>
@@ -44,9 +44,7 @@
             <g:layoutBody />
         </div>
 
-
-            <g:pageProperty name="page.ironMan" />
+        <g:pageProperty name="page.ironMan" />
     </div>
-
 </body>
 </html>

@@ -2,19 +2,22 @@ package learning.management
 
 class UserController {
 
-    def createform() {
+    def create() {
     }
 
     def save() {
+        println params
         Person myUser = new Person([firstName: params.firstName, lastName: params.lastName, email: params.email,
             age: params.age])
 
         myUser.save()
 
-        redirect(action: "view")
+        redirect(action: "view", params: [id: myUser.id, date: 17])
     }
 
-    def view() {
+
+
+    def show() {
         Person myPerson = Person.get(params.id)
 
         return [recentuser: myPerson]
