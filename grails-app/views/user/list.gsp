@@ -9,6 +9,7 @@
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Age</th>
+                <th>Action</th>
             </tr>
             <g:each var="user" in="${allCreatedUsers}">
                     <tr class="${user.age > 100 ? 'bg-danger': ''}">
@@ -20,6 +21,9 @@
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <td>(${user.age})</td>
+                        <td>
+                            <a href="/user/edit/${user.id}">Edit</a>
+                        </td>
                     </tr>
             </g:each>
         </table>
