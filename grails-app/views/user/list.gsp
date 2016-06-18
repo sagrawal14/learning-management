@@ -23,6 +23,8 @@
                         <td>(${user.age})</td>
                         <td>
                             <a href="/user/edit/${user.id}">Edit</a>
+
+                            <a href="/user/delete/${user.id}">Delete</a>
                         </td>
                     </tr>
             </g:each>

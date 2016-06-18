@@ -8,5 +8,7 @@ class Person {
     int age
 
     static constraints = {
+        email(email: true)
+        age(max: 200)
     }
 }
