@@ -117,4 +117,21 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
-abc.xyz.myName = "Learning Management"
+abc {
+    xyz {
+        myName = "Learning Management"
+        myPassword = "12334"
+        myKey = "ksdjfsafjsl90890"
+    }
+
+    mno {
+        pqr = "stu"
+        vwx = "yz"
+    }
+}
+
+environments {
+    production {
+        abc.xyz.myName = "Learning Mgmt - Prod"
+    }
+}

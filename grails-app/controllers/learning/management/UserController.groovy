@@ -2,7 +2,10 @@ package learning.management
 
 class UserController {
 
+    def grailsApplication
+
     def create() {
+        println grailsApplication.config.abc.xyz.myKey
         [myUser: new Person()]
     }
 
