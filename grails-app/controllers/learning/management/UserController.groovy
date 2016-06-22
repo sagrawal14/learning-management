@@ -67,46 +67,28 @@ class UserController {
     }
 
     def test(String email, String name, int age) {
+        List persons
+
+        List splittedValues = name.split(" ")
+
+        String firstName = splittedValues[0]
+        String lastName = splittedValues[1]
+
         if (email && name && age) {
-            String[] splittedValues = name.split(" ")
-
-            String firstName = splittedValues[0]
-            String lastName = splittedValues.size() == 2 ? splittedValues[1] : null
-
-            List persons = Person.findAllByEmailIlikeOrFirstNameOrLastNameOrAge("%${email}%", firstName, lastName, age)
-
-            render(view: "search", model: ["persons": persons])
+            persons = Person.findAllByEmailIlikeOrFirstNameOrLastNameOrAge("%${email}%", firstName, lastName, age)
         } else if (email && name) {
-            String[] splittedValues = name.split(" ")
-
-            String firstName = splittedValues[0]
-            String lastName = splittedValues.size() == 2 ? splittedValues[1] : null
-
-            List persons = Person.findAllByEmailIlikeOrFirstNameOrLastName("%${email}%", firstName, lastName)
-
-            render(view: "search", model: ["persons": persons])
+            persons = Person.findAllByEmailIlikeOrFirstNameOrLastName("%${email}%", firstName, lastName)
         } else if (name && age) {
-            String[] splittedValues = name.split(" ")
-
-            String firstName = splittedValues[0]
-            String lastName = splittedValues.size() == 2 ? splittedValues[1] : null
-
-            List persons = Person.findAllByFirstNameOrLastNameOrAge(firstName, lastName, age)
-
-            render(view: "search", model: ["persons": persons])
+            persons = Person.findAllByFirstNameOrLastNameOrAge(firstName, lastName, age)
         } else if (email && age) {
-            List persons = Person.findAllByEmailIlikeOrAge("%${email}%", age)
-
-            render(view: "search", model: ["persons": persons])
+            persons = Person.findAllByEmailIlikeOrAge("%${email}%", age)
         } else if (email) {
-            List persons = Person.findAllByEmail("%${email}%")
-
-            render(view: "search", model: ["persons": persons])
+            persons = Person.findAllByEmail("%${email}%")
         } else if (name) {
-            List persons = Person.findAllByEmailIlikeOrAge("%${email}%", age)
-
-            render(view: "search", model: ["persons": persons])
+            persons = Person.findAllByEmailIlikeOrAge("%${email}%", age)
         }
         // simillary for age
+
+        render(view: "search", model: ["persons": persons])
     }
 }
