@@ -8,6 +8,7 @@
                 <th>ID</th>
                 <th>First name</th>
                 <th>Last name</th>
+                <th>Email</th>
                 <th>Age</th>
                 <th>Action</th>
             </tr>
@@ -20,6 +21,7 @@
                         </td>
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
+                        <td>${user.email}</td>
                         <td>(${user.age})</td>
                         <td>
                             <a href="/user/edit/${user.id}">Edit</a>
