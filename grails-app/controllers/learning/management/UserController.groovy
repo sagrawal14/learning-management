@@ -66,6 +66,9 @@ class UserController {
     def search() {
     }
 
+    def search2() {
+    }
+
     def test(String email, String name, int age) {
         List persons
 
@@ -90,5 +93,19 @@ class UserController {
         // simillary for age
 
         render(view: "search", model: ["persons": persons])
+    }
+
+    def test2(String email, int age, String ageCriteria) {
+        List persons
+
+        if (email && age) {
+            if (ageCriteria == "greater") {
+                persons = Person.findAllByEmailIlikeAndAgeGreaterThan("%${email}%", age)
+            } else if (ageCriteria == "lesser") {
+                persons = Person.findAllByEmailIlikeAndAgeGreaterThan("%${email}%", age)
+            }
+        }
+
+        // And so on..thik hai bhai
     }
 }
