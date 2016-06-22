@@ -5,7 +5,6 @@ class UserController {
     def grailsApplication
 
     def create() {
-        println grailsApplication.config.abc.xyz.myKey
         [myUser: new Person()]
     }
 
@@ -62,5 +61,52 @@ class UserController {
         personInstance.delete(flush: true)
 
         redirect(action: "list")
+    }
+
+    def search() {
+    }
+
+    def test(String email, String name, int age) {
+        if (email && name && age) {
+            String[] splittedValues = name.split(" ")
+
+            String firstName = splittedValues[0]
+            String lastName = splittedValues.size() == 2 ? splittedValues[1] : null
+
+            List persons = Person.findAllByEmailIlikeOrFirstNameOrLastNameOrAge("%${email}%", firstName, lastName, age)
+
+            render(view: "search", model: ["persons": persons])
+        } else if (email && name) {
+            String[] splittedValues = name.split(" ")
+
+            String firstName = splittedValues[0]
+            String lastName = splittedValues.size() == 2 ? splittedValues[1] : null
+
+            List persons = Person.findAllByEmailIlikeOrFirstNameOrLastName("%${email}%", firstName, lastName)
+
+            render(view: "search", model: ["persons": persons])
+        } else if (name && age) {
+            String[] splittedValues = name.split(" ")
+
+            String firstName = splittedValues[0]
+            String lastName = splittedValues.size() == 2 ? splittedValues[1] : null
+
+            List persons = Person.findAllByFirstNameOrLastNameOrAge(firstName, lastName, age)
+
+            render(view: "search", model: ["persons": persons])
+        } else if (email && age) {
+            List persons = Person.findAllByEmailIlikeOrAge("%${email}%", age)
+
+            render(view: "search", model: ["persons": persons])
+        } else if (email) {
+            List persons = Person.findAllByEmail("%${email}%")
+
+            render(view: "search", model: ["persons": persons])
+        } else if (name) {
+            List persons = Person.findAllByEmailIlikeOrAge("%${email}%", age)
+
+            render(view: "search", model: ["persons": persons])
+        }
+        // simillary for age
     }
 }
